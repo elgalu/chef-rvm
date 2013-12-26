@@ -32,12 +32,13 @@ Array(node['rvm']['user_installs']).each do |rvm_user|
                             node['rvm']['user_global_gems']
   gems                    = rvm_user['gems'] ||
                             node['rvm']['user_gems']
+  user                    = rvm_user['user'] || node['target_user']
 
   if perform_install_rubies
     install_rubies  :rubies => rubies,
                     :default_ruby => default_ruby,
                     :global_gems => global_gems,
                     :gems => gems,
-                    :user => rvm_user['user']
+                    :user => user
   end
 end

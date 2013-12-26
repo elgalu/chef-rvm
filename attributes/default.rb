@@ -27,6 +27,8 @@ default['rvm']['user_default_ruby'] = "ruby-1.9.3-p327"
 default['rvm']['rubies']      = []
 default['rvm']['user_rubies'] = []
 
+default['target_user'] = nil
+
 # list of gems to be installed in global gemset of all rubies
 _global_gems_ = [
   { 'name'    => 'bundler' }
